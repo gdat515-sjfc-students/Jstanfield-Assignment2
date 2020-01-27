@@ -52,17 +52,15 @@ str(dis.data)
 ```
 
 ```{r}
-highlights <- dis.data %>%
-  filter()
-
 bought <- dis.data %>%
-  filter(Date == "2010-01-01" | Date == "2012-12-01")
+  filter(Date == "2006-02-01" | Date == "2010-01-01" | Date == "2012-12-01" | Date == "2019-04-01")
 
 ggplot(data = dis.data, mapping = aes(x = Date, y = Open)) +
   geom_point() +
-  #geom_point(data = highlights, aes(x = Date, y = Open), color = 'yellow', size = 5) +
   geom_point(data = bought, aes(x = Date, y = Open), color = 'green', size = 5) +
-  geom_smooth(method = loess, color = "blue")
+  geom_smooth(method = loess, color = "blue") +
+  ggtitle("Disney Stock Open per Month") +
+  labs(caption = "The Open Stock Price for Disney each month since 2000. The purchases of Pixar, Marvel, Lucasfilm, and Fox are highlighted.")
 ```
 
 
