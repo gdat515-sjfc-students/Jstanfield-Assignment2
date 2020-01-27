@@ -2,29 +2,65 @@
 title: "Jstanfield-GDAT515-Assignment2"
 author: "James Stanfield"
 date: "1/27/2020"
-output: html_document
+output: 
+  md_document:
+    variant: gfm
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+c("tidyverse",
+  "ggplot2",
+  "data.table",
+  "tseries"
+  ) -> package_names  
+for(package_name in package_names) {
+  if(!is.element(package_name, installed.packages()[,1])) {
+     install.packages(package_name,
+                      repos = "http://cran.mtu.edu/")
+  }
+  library(package_name, character.only=TRUE,
+          quietly=TRUE,verbose=FALSE)
+}
+
+rm(list=c("package_name", "package_names")) # clean up the environment
+
+options(show.signif.stars = FALSE)  # Don't confuse significance & effect size!
+
 ```
 
-## R Markdown
+Data from:
+https://finance.yahoo.com/quote/DIS/history?period1=946684800&period2=1580083200&interval=1wk&filter=history&frequency=1wk
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```{r load disney stock data}
+fread(file = "C:/Users/Richard/Documents/Data Science/GDAT515/Jstanfield-Assignment2/DIS.csv") -> dis.data
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+str(dis.data)
 ```
 
-## Including Plots
+```{r}
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
