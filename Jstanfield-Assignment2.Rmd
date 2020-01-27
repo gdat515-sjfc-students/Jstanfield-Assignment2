@@ -34,16 +34,23 @@ Data from:
 https://finance.yahoo.com/quote/DIS/history?period1=946684800&period2=1580083200&interval=1wk&filter=history&frequency=1wk
 
 ```{r load disney stock data}
-fread(file = "C:/Users/Richard/Documents/Data Science/GDAT515/Jstanfield-Assignment2/DIS.csv") -> dis.data
+fread(file = "C:/Users/Richard/Documents/Data Science/GDAT515/Jstanfield-Assignment2/DIS.csv") -> dis
 
-str(dis.data)
+str(dis)
+```
+
+```{r time series of Disney open}
+dis %>%
+  select(Open) -> dis.data
+
+ts(dis.data, start = c(2000, 1), frequency = 52) -> dis.ts
+
+str(dis.ts)
 ```
 
 ```{r}
 
 ```
-
-
 
 
 
