@@ -43,6 +43,8 @@ str(dis.data)
     ##  $ Open: num  28.9 35.8 33.5 40.7 43 ...
     ##  - attr(*, ".internal.selfref")=<externalptr>
 
+![.]
+
 ``` r
 bought <- dis.data %>%
   filter(Date == "2006-02-01" | Date == "2010-01-01" | Date == "2012-12-01" | Date == "2019-04-01")
