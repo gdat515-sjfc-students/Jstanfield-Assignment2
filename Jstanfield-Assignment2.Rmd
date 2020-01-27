@@ -46,6 +46,8 @@ str(dis)
 dis %>%
   select(Date, Open) -> dis.data
 
+as.Date(dis.data$Date, "%m/%d/%Y") -> dis.data$Date
+
 str(dis.data)
 ```
 
