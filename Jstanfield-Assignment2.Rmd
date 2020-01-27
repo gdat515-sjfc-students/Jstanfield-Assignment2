@@ -33,8 +33,18 @@ options(show.signif.stars = FALSE)  # Don't confuse significance & effect size!
 
 ```
 
+#Question:
+
+How have Disney's mergers and acquisitions of major properties affected or not affected the stock price?
+
+#Data
+
 Data from:
 https://finance.yahoo.com/quote/DIS/history?period1=946684800&period2=1580083200&interval=1wk&filter=history&frequency=1wk
+
+Great site for easy stock data.
+
+#GGPLOT2
 
 ```{r load disney stock data}
 fread(file = "C:/Users/Richard/Documents/Data Science/GDAT515/Jstanfield-Assignment2/DIS.csv") -> dis
@@ -63,7 +73,7 @@ ggplot(data = dis.data, mapping = aes(x = Date, y = Open)) +
   labs(caption = "The Open Stock Price for Disney each month since 2000. The purchases of Pixar, Marvel, Lucasfilm, and Fox are highlighted.")
 ```
 
-
+Looking at the highlighted points of Disney's recent major acquisitions, we can see that each is followed by a notable climb in stock open price, some more dramatic than others. We can see a very strong and continuing climb following the purchase of Marvel.
 
 
 
