@@ -43,7 +43,7 @@ str(dis.data)
     ##  $ Open: num  28.9 35.8 33.5 40.7 43 ...
     ##  - attr(*, ".internal.selfref")=<externalptr>
 
-![
+
 
 ``` r
 bought <- dis.data %>%
@@ -56,7 +56,7 @@ ggplot(data = dis.data, mapping = aes(x = Date, y = Open)) +
   ggtitle("Disney Stock Open per Month") +
   labs(caption = "The Open Stock Price for Disney each month since 2000. The purchases of Pixar, Marvel, Lucasfilm, and Fox are highlighted.")
 ```
-]
+
 ![](Jstanfield-Assignment2_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
 
 Looking at the highlighted points of Disney’s recent major acquisitions,
