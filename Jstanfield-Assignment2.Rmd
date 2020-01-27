@@ -10,10 +10,13 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
+options(scipen = 999)
+
 c("tidyverse",
   "ggplot2",
   "data.table",
-  "tseries"
+  "ggthemes"
+  
   ) -> package_names  
 for(package_name in package_names) {
   if(!is.element(package_name, installed.packages()[,1])) {
@@ -41,15 +44,14 @@ str(dis)
 
 ```{r time series of Disney open}
 dis %>%
-  select(Open) -> dis.data
+  select(Date, Open) -> dis.data
 
-ts(dis.data, start = c(2000, 1), frequency = 52) -> dis.ts
-
-str(dis.ts)
+str(dis.data)
 ```
 
 ```{r}
-
+ggplot(data = dis.data, mapping = aes(x = Date, y = Open)) +
+  geom_point()
 ```
 
 
